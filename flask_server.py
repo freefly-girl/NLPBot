@@ -1,5 +1,5 @@
 from flask import Flask, request
-from gpt import GPT, params_default
+from gpt_model import GPT, params_default
 import random
 
 app = Flask(__name__)

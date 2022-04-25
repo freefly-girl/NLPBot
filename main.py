@@ -3,15 +3,14 @@ from telebot.async_telebot import AsyncTeleBot
 import logging
 import asyncio
 import requests
+import bot_token  # Файл с объявлением токена спрятан с помощью .gitignore
 
 logger = telebot.logger
 telebot.logger.setLevel(logging.ERROR)  # Outputs debug messages to console.
 
-API_TOKEN = '5187163126:AAHx2de-15z4EWkKUf_RaS9zplpo6gR6ZdI'
-bot = AsyncTeleBot(API_TOKEN)
+bot = AsyncTeleBot(bot_token.API_TOKEN)
 
 conv_context = {}
-
 
 @bot.message_handler(commands=['start', 'help'])
 async def send_welcome(message):
